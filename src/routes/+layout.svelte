@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '../app.css';
 	import { QueryClientProvider } from '@tanstack/svelte-query';
 	import type { PageData } from './$types';
 
@@ -6,7 +7,7 @@
 </script>
 
 <QueryClientProvider client={data.queryClient}>
-	<main>
+	<main class="min-h-screen bg-black text-white">
 		<slot />
 	</main>
 </QueryClientProvider>
