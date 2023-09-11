@@ -20,5 +20,4 @@ RUN pnpm install
 
 EXPOSE 5173
 EXPOSE 24678
-
-CMD ["pnpm", "dev", "--host", "0.0.0.0"]
+EXPOSE 6006

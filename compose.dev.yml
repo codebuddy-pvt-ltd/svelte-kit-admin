@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  svelte:
+  admin:
     build:
       context: .
       dockerfile: Dockerfile.dev
@@ -13,6 +13,21 @@ services:
     ports:
       - 5173:5173
       - 24678:24678
+    command: sh -c "pnpm dev --host 0.0.0.0"
+
+  storybook:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    init: true
+    restart: always
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - 6006:6006
+    command: sh -c "pnpm storybook"
 
 volumes:
-  svelte:
+  admin:
+  storybook:

@@ -7,7 +7,7 @@
 </script>
 
 <QueryClientProvider client={data.queryClient}>
-	<main class="min-h-screen bg-black text-white">
+	<main class="bg-dark flex min-h-screen flex-col">
 		<slot />
 	</main>
 </QueryClientProvider>
