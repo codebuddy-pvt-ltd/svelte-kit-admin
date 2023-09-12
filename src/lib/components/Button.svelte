@@ -1,8 +1,7 @@
 <script lang="ts">
 	import type { HTMLButtonAttributes } from 'svelte/elements';
-	import { twMerge } from 'tailwind-merge';
 	import { cn } from './utils';
-	import { cva, type VariantProps } from 'class-variance-authority';
+	import { cva } from 'class-variance-authority';
 
 	type Colors = 'primary' | 'accent' | 'dark' | 'light' | 'success' | 'warning' | 'danger';
 	type Sizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl';

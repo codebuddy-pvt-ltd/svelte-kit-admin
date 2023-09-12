@@ -6,7 +6,7 @@
 		error?: boolean;
 	}
 
-	export let error = false;
+	export let error: $$Props['error'] = false;
 </script>
 
 <div
