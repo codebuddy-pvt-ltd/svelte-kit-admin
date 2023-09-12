@@ -1,9 +1,9 @@
-import Input from '$lib/components/Form/Input.svelte';
+import TextInput from '$lib/components/Form/TextInput.svelte';
 import type { Meta, StoryObj } from '@storybook/svelte';
 
 const meta = {
-	title: 'Components/Input',
-	component: Input,
+	title: 'Components/TextInput',
+	component: TextInput,
 	tags: ['autodocs'],
 	argTypes: {
 		name: { control: 'text', defaultValue: '' },
@@ -14,7 +14,7 @@ const meta = {
 			defaultValue: 'text'
 		}
 	}
-} satisfies Meta<Input>;
+} satisfies Meta<TextInput>;
 
 export default meta;
 
@@ -22,15 +22,18 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	args: {
+		label: 'Label',
 		name: 'name',
 		placeholder: 'Write here...',
-		type: 'text'
+		type: 'text',
+		error: undefined
 	}
 };
 
-export const RequiredInput: Story = {
-	name: 'Required input',
+export const RequiredTextInput: Story = {
+	name: 'Required TextInput',
 	args: {
+		label: 'Label',
 		name: 'name',
 		placeholder: 'Write here...',
 		type: 'text',
@@ -39,11 +42,23 @@ export const RequiredInput: Story = {
 };
 
 export const WithError: Story = {
-	name: 'Input with Error',
+	name: 'TextInput with Error',
 	args: {
+		label: 'Label',
 		name: 'name',
 		placeholder: 'Write here...',
 		type: 'text',
-		error: true
+		error: 'This is required'
+	}
+};
+
+export const DisabledTextInput: Story = {
+	name: 'Disabled TextInput',
+	args: {
+		label: 'Label',
+		name: 'name',
+		placeholder: 'Write here...',
+		type: 'text',
+		disabled: true
 	}
 };

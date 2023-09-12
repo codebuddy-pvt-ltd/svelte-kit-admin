@@ -1,3 +1,7 @@
 {
-	"workbench.editor.labelFormat": "short"
+	"workbench.editor.labelFormat": "short",
+	"tailwindCSS.experimental.classRegex": [
+		["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+		["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+	]
 }

@@ -11,23 +11,23 @@ export default {
 			primary: {
 				DEFAULT: '#30475E'
 			},
+			accent: {
+				DEFAULT: '#F05454'
+			},
 			dark: {
 				DEFAULT: '#222831'
 			},
 			light: {
 				DEFAULT: '#DDDDDD'
 			},
-			accent: {
-				DEFAULT: '#F05454'
-			},
-			danger: {
-				DEFAULT: '#F05454'
-			},
 			success: {
 				DEFAULT: '#54F0A2'
 			},
 			warning: {
 				DEFAULT: '#F0E654'
+			},
+			danger: {
+				DEFAULT: '#F05454'
 			}
 		},
 		extend: {
