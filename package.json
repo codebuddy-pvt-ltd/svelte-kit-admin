@@ -1,5 +1,5 @@
 {
-	"name": "kapestar-admin-svelte",
+	"name": "@codebuddy/svelte-kit-admin",
 	"version": "0.0.1",
 	"private": true,
 	"author": {
