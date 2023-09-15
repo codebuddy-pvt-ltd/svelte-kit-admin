@@ -8,9 +8,8 @@
 		<TextInput required name="email" type="email">
 			<svelte:fragment slot="label">Email</svelte:fragment>
 			<svelte:fragment slot="left">@</svelte:fragment>
-			<svelte:fragment slot="right">></svelte:fragment>
 		</TextInput>
 
-		<Button block class="my-3">Settings</Button>
+		<Button block fullWidth class="mt-3">Settings</Button>
 	</form>
 </section>

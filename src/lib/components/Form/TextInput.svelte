@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { v4 } from 'uuid';
-	import { twMerge } from 'tailwind-merge';
 	import { fade } from 'svelte/transition';
 	import Input from './Input.svelte';
 	import type { HTMLInputAttributes } from 'svelte/elements';
+	import { cn } from '../utils';
 
 	interface $$Props extends HTMLInputAttributes {
 		error?: string;
@@ -17,7 +17,7 @@
 
 <div class="">
 	{#if label || $$slots.label}
-		<label for={id} class={twMerge('block', error ? 'text-danger' : '')}>
+		<label for={id} class={cn('block', error ? 'text-danger' : '')}>
 			{#if $$slots.label}
 				<slot name="label" />
 			{:else if label}
@@ -28,7 +28,7 @@
 			{/if}
 		</label>
 	{/if}
-	<Input {id} {...$$restProps} error={Boolean(error)}>
+	<Input {id} {...$$restProps} error={Boolean(error)} class={cn($$props.class, 'outline-none')}>
 		<svelte:fragment slot="left">
 			{#if $$slots.left}
 				<slot name="left" />
