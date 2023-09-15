@@ -1,30 +1,36 @@
-<script lang="ts">
+<script context="module" lang="ts">
 	import type { HTMLButtonAttributes } from 'svelte/elements';
-	import { cn } from './utils';
-	import { cva } from 'class-variance-authority';
+	import type { Color, Size, Radius } from './utils/theme';
 
-	type Colors = 'primary' | 'accent' | 'dark' | 'light' | 'success' | 'warning' | 'danger';
-	type Sizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-
-	interface $$Props extends HTMLButtonAttributes {
+	export interface ButtonProps extends HTMLButtonAttributes {
 		variant?: 'filled' | 'outline' | 'subtle' | 'text';
-		color?: Colors;
-		size?: Sizes;
+		color?: Color;
+		size?: Size;
+		radius?: Radius;
 		fullWidth?: boolean;
 		block?: boolean;
 		isLoading?: boolean;
 	}
+</script>
+
+<script lang="ts">
+	import { cn } from './utils';
+	import { cva } from 'class-variance-authority';
+	import { Rounded } from './utils/theme';
+
+	type $$Props = ButtonProps;
 
 	export let variant: $$Props['variant'] = 'filled';
 	export let color: $$Props['color'] = 'primary';
 	export let size: $$Props['size'] = 'md';
 	export let fullWidth: $$Props['fullWidth'] = false;
 	export let block: $$Props['block'] = false;
+	export let radius: $$Props['radius'] = 'default';
 	export let isLoading: $$Props['isLoading'] = false;
 	export let disabled: $$Props['disabled'] = false;
 
 	let buttonVariants = cva(
-		['rounded font-bold transition-all duration-500 border-2 border-transparent'],
+		['relative font-bold transition-all duration-500 border-2 border-transparent'],
 		{
 			variants: {
 				variant: {
@@ -51,7 +57,11 @@
 				},
 				disabled: {
 					true: 'opacity-50 cursor-not-allowed'
-				}
+				},
+				isLoading: {
+					true: 'cursor-not-allowed'
+				},
+				radius: Rounded
 			},
 			defaultVariants: {
 				variant: 'filled',
@@ -216,12 +226,11 @@
 <button
 	{...$$restProps}
 	class={cn(
-		'relative rounded font-bold transition-all',
-		buttonVariants({ variant, color, size, disabled }),
+		buttonVariants({ variant, color, size, disabled, isLoading, radius }),
 		{
+			block,
 			'w-full': fullWidth,
-			block: block
-			// 'text-opacity-10': isLoading
+			'text-opacity-10': isLoading
 		},
 		$$restProps.class
 	)}

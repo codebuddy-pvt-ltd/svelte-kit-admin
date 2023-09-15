@@ -1,14 +1,19 @@
+<script context="module" lang="ts">
+	import type { InputProps } from './Input.svelte';
+
+	export interface TextInputProps extends InputProps {
+		error?: boolean;
+		label?: string;
+	}
+</script>
+
 <script lang="ts">
 	import { v4 } from 'uuid';
 	import { fade } from 'svelte/transition';
 	import Input from './Input.svelte';
-	import type { HTMLInputAttributes } from 'svelte/elements';
 	import { cn } from '../utils';
 
-	interface $$Props extends HTMLInputAttributes {
-		error?: string;
-		label?: string;
-	}
+	type $$Props = TextInputProps;
 
 	export let error: $$Props['error'] = undefined;
 	export let label: $$Props['label'] = undefined;

@@ -1,10 +1,15 @@
-<script lang="ts">
+<script context="module" lang="ts">
 	import type { HTMLInputAttributes } from 'svelte/elements';
-	import { cn } from '../utils';
 
-	interface $$Props extends HTMLInputAttributes {
+	export interface InputProps extends HTMLInputAttributes {
 		error?: boolean;
 	}
+</script>
+
+<script lang="ts">
+	import { cn } from '../utils';
+
+	type $$Props = InputProps;
 
 	export let error: $$Props['error'] = false;
 </script>

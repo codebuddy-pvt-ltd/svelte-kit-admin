@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
 import Button from './Button.svelte';
+import { Colors, Radii, Sizes } from '$lib/components/utils/theme';
 
 const meta = {
 	title: 'Components/Button',
@@ -33,15 +34,21 @@ const meta = {
 		},
 		color: {
 			control: 'select',
-			options: ['primary', 'accent', 'dark', 'light', 'success', 'warning', 'danger'],
+			options: Object.values(Colors),
 			defaultValue: 'primary',
 			description: 'The variant of the button'
 		},
 		size: {
 			control: 'select',
-			options: ['xs', 'sm', 'md', 'lg', 'xl'],
+			options: Object.values(Sizes),
 			defaultValue: 'md',
 			description: 'The size of the button'
+		},
+		radius: {
+			control: 'select',
+			options: Object.values(Radii),
+			defaultValue: 'default',
+			description: 'The radius of the button'
 		}
 	}
 } satisfies Meta<Button>;
