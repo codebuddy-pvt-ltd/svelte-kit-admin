@@ -1,8 +1,10 @@
 <script context="module" lang="ts">
 	import type { InputProps } from './Input.svelte';
 
-	export interface TextInputProps extends InputProps {
-		error?: boolean;
+	export interface TextInputProps extends Omit<InputProps, 'error'> {
+		ref?: HTMLInputElement;
+		containerRef?: HTMLDivElement;
+		error?: string;
 		label?: string;
 	}
 </script>
@@ -18,9 +20,11 @@
 	export let error: $$Props['error'] = undefined;
 	export let label: $$Props['label'] = undefined;
 	export let id: $$Props['id'] = v4();
+	export let ref: $$Props['ref'] = undefined;
+	export let containerRef: $$Props['containerRef'] = undefined;
 </script>
 
-<div class="">
+<div class="w-full" bind:this={containerRef}>
 	{#if label || $$slots.label}
 		<label for={id} class={cn('block', error ? 'text-danger' : '')}>
 			{#if $$slots.label}
@@ -33,7 +37,22 @@
 			{/if}
 		</label>
 	{/if}
-	<Input {id} {...$$restProps} error={Boolean(error)} class={cn($$props.class, 'outline-none')}>
+	<Input
+		{id}
+		{...$$restProps}
+		error={Boolean(error)}
+		class={cn($$props.class, 'outline-none')}
+		bind:ref
+		on:focus
+		on:blur
+		on:click
+		on:keypress
+		on:keydown
+		on:keyup
+		on:change
+		on:click
+		on:input
+	>
 		<svelte:fragment slot="left">
 			{#if $$slots.left}
 				<slot name="left" />

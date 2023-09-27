@@ -10,6 +10,7 @@
 		fullWidth?: boolean;
 		block?: boolean;
 		isLoading?: boolean;
+		ref?: HTMLButtonElement;
 	}
 </script>
 
@@ -28,6 +29,7 @@
 	export let radius: $$Props['radius'] = 'default';
 	export let isLoading: $$Props['isLoading'] = false;
 	export let disabled: $$Props['disabled'] = false;
+	export let ref: $$Props['ref'] = undefined;
 
 	let buttonVariants = cva(
 		['relative font-bold transition-all duration-500 border-2 border-transparent'],
@@ -235,6 +237,7 @@
 		$$restProps.class
 	)}
 	disabled={isLoading || disabled}
+	bind:this={ref}
 >
 	{#if isLoading}
 		{#if $$slots.loader}

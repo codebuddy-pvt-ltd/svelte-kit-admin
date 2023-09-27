@@ -32,7 +32,7 @@
 |    Color Input    |   ❌   |
 |    File Input     |   ❌   |
 |       Input       |   ✅   |
-|      Select       |   ❌   |
+|      Select       |   ✅   |
 |   Multi Select    |   ❌   |
 |   Native Select   |   ❌   |
 |   Number Input    |   ❌   |
