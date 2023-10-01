@@ -1,5 +1,4 @@
 <script context="module" lang="ts">
-	import { isNumber } from 'lodash';
 	import type { TextInputProps } from './TextInput.svelte';
 
 	export type NumberInputProps = Omit<TextInputProps, 'type'>;
@@ -17,9 +16,7 @@
 	}
 
 	function handleDecrement() {
-		if (isNumber(value)) {
-			value = (value ?? 0) - 1;
-		}
+		value = (value ?? 0) - 1;
 	}
 </script>
 

@@ -24,27 +24,27 @@
 
 ### Form Components
 
-|     Component     | Status |
-| :---------------: | :----: |
-|   Autocomplete    |   ✅   |
-|     Checkbox      |   ✅   |
-|       Chip        |   ✅   |
-|    Color Input    |   ❌   |
-|    File Input     |   ❌   |
-|       Input       |   ✅   |
-|      Select       |   ✅   |
-|   Multi Select    |   ❌   |
-|   Native Select   |   ❌   |
-|   Number Input    |   ✅   |
-|  Password Input   |   ❌   |
-|     PIN Input     |   ❌   |
-|       Radio       |   ❌   |
-|      Rating       |   ❌   |
-| Segmented Control |   ❌   |
-|      Slider       |   ❌   |
-|      Switch       |   ❌   |
-|     Textarea      |   ❌   |
-|     TextInput     |   ✅   |
+|   Component    | Status |
+| :------------: | :----: |
+|  Autocomplete  |   ✅   |
+|    Checkbox    |   ✅   |
+|      Chip      |   ✅   |
+|  Color Input   |   ❌   |
+|   File Input   |   ❌   |
+|     Input      |   ✅   |
+|     Select     |   ✅   |
+|  Multi Select  |   ❌   |
+| Native Select  |   ❌   |
+|  Number Input  |   ✅   |
+| Password Input |   ✅   |
+|   PIN Input    |   ❌   |
+|     Radio      |   ❌   |
+|     Rating     |   ❌   |
+|   Tab Select   |   ❌   |
+|     Slider     |   ❌   |
+|     Switch     |   ❌   |
+|    Textarea    |   ❌   |
+|   TextInput    |   ✅   |
 
 ### Navigation Components
 

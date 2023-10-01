@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Chip from '$lib/components/Form/Chip.svelte';
-	import NumberInput from '$lib/components/Form/NumberInput.svelte';
+	import PasswordInput from '$lib/components/Form/PasswordInput.svelte';
 	import TextInput from '$lib/components/Form/TextInput.svelte';
 </script>
 
@@ -13,6 +13,6 @@
 
 		<Chip>Test</Chip>
 
-		<NumberInput />
+		<PasswordInput />
 	</form>
 </section>
