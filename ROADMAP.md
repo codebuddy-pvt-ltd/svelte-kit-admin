@@ -38,7 +38,7 @@
 |  Number Input  |   ✅   |
 | Password Input |   ✅   |
 |   PIN Input    |   ❌   |
-|     Radio      |   ❌   |
+|     Radio      |   ✅   |
 |     Rating     |   ❌   |
 |   Tab Select   |   ❌   |
 |     Slider     |   ❌   |
