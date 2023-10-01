@@ -28,7 +28,7 @@
 | :---------------: | :----: |
 |   Autocomplete    |   ✅   |
 |     Checkbox      |   ✅   |
-|       Chip        |   ❌   |
+|       Chip        |   ✅   |
 |    Color Input    |   ❌   |
 |    File Input     |   ❌   |
 |       Input       |   ✅   |

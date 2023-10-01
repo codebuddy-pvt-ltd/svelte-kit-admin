@@ -1,5 +1,5 @@
+import 'iconify-icon';
 import type { Preview } from '@storybook/svelte';
-
 import { withThemeByClassName } from '@storybook/addon-styling';
 
 /* TODO: update import to your tailwind styles file. If you're using Angular, inject this through your angular.json config instead */

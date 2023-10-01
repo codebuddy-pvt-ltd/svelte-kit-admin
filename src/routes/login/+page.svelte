@@ -1,6 +1,5 @@
 <script lang="ts">
-	import Button from '$lib/components/Button.svelte';
-	import Checkbox from '$lib/components/Form/Checkbox.svelte';
+	import Chip from '$lib/components/Form/Chip.svelte';
 	import TextInput from '$lib/components/Form/TextInput.svelte';
 </script>
 
@@ -11,8 +10,6 @@
 			<svelte:fragment slot="left">@</svelte:fragment>
 		</TextInput>
 
-		<Button block fullWidth class="mt-3">Settings</Button>
-
-		<Checkbox description="Lorem Ipsum" intermediate>Label</Checkbox>
+		<Chip>Test</Chip>
 	</form>
 </section>
