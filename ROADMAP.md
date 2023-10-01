@@ -35,7 +35,7 @@
 |      Select       |   ✅   |
 |   Multi Select    |   ❌   |
 |   Native Select   |   ❌   |
-|   Number Input    |   ❌   |
+|   Number Input    |   ✅   |
 |  Password Input   |   ❌   |
 |     PIN Input     |   ❌   |
 |       Radio       |   ❌   |
