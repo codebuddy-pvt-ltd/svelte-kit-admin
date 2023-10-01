@@ -26,7 +26,7 @@
 
 |     Component     | Status |
 | :---------------: | :----: |
-|   Autocomplete    |   ❌   |
+|   Autocomplete    |   ✅   |
 |     Checkbox      |   ❌   |
 |       Chip        |   ❌   |
 |    Color Input    |   ❌   |

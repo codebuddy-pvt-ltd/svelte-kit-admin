@@ -1,14 +1,10 @@
 <script context="module" lang="ts">
 	import type { TextInputProps } from './TextInput.svelte';
-	import type { Option, OptionItem, OptionValue } from './options/types';
+	import type { OptionValue, Option, GroupedBaseOption } from './options/types';
 
 	export interface AutocompleteProps extends TextInputProps {
 		value?: OptionValue;
-		options: Array<OptionItem>;
-		clearable?: boolean;
-		searchable?: boolean;
-		checkIconPosition?: 'left' | 'right';
-		withCheckIcon?: boolean;
+		options: Array<OptionValue | GroupedBaseOption>;
 		disabled?: boolean;
 	}
 </script>
@@ -17,31 +13,27 @@
 	import { onMount } from 'svelte';
 	import TextInput from './TextInput.svelte';
 	import type { ReferenceElement, FloatingElement } from '@floating-ui/core';
-	import { autoUpdate, computePosition, flip, offset, size } from '@floating-ui/dom';
+	import { autoUpdate, computePosition, offset, size, flip } from '@floating-ui/dom';
 	import { cn } from '../utils';
-	import { parseOptions, searchFilterOptions } from './options/utils';
 	import Options from './options/Options.svelte';
+	import { isOptionValue, parseOptions, searchFilterOptions } from './options/utils';
 
 	type $$Props = AutocompleteProps;
 
 	export let options: $$Props['options'] = [];
 	export let value: $$Props['value'] = undefined;
-	export let clearable: $$Props['clearable'] = false;
-	export let searchable: $$Props['searchable'] = false;
-	export let checkIconPosition: $$Props['checkIconPosition'] = 'left';
-	export let withCheckIcon: $$Props['withCheckIcon'] = true;
 	export let disabled: $$Props['disabled'] = false;
 
 	let referenceElement: ReferenceElement;
 	let inputElement: HTMLInputElement;
 	let floatingElement: FloatingElement;
 
-	let selectedOption: Option | undefined = undefined;
 	let showFloatingElement = false;
 	let search = '';
 
 	$: parsedOptions = parseOptions(options);
-	$: filteredOptions = searchable ? searchFilterOptions(parsedOptions, search) : parsedOptions;
+
+	$: filteredOptions = searchFilterOptions(parsedOptions, search);
 
 	async function updatePosition() {
 		const { x, y } = await computePosition(referenceElement, floatingElement, {
@@ -96,31 +88,25 @@
 		}
 	}
 
-	function handleAction(event: MouseEvent) {
-		event.preventDefault();
-		event.stopPropagation();
-
-		if (clearable && value !== undefined) {
-			value = undefined;
-			search = '';
-			selectedOption = undefined;
-		} else {
-			showFloatingElement = true;
-		}
-	}
-
-	function handleSelect(event: CustomEvent<Option>) {
+	function handleSelect(event: CustomEvent<OptionValue | Option>) {
 		const result = event.detail;
-
-		selectedOption = result;
-		value = result.value;
-		search = result.label;
+		if (isOptionValue(result)) {
+			value = result;
+			search = typeof result === 'string' ? result : result.toString();
+		} else {
+			value = result.label;
+			search = result.label;
+		}
 
 		showFloatingElement = false;
 	}
 
 	function handleTextChange(event: Event) {
 		search = (event.target as HTMLInputElement).value;
+
+		if (!showFloatingElement) {
+			showFloatingElement = true;
+		}
 	}
 </script>
 
@@ -146,18 +132,7 @@
 			}
 		}}
 		on:input={handleTextChange}
-		readonly={searchable ? undefined : true}
-	>
-		<svelte:fragment slot="right">
-			<button type="button" tabindex="-1" on:click={handleAction} class="h-[16px] w-[16px]">
-				{#if clearable && value !== undefined}
-					<iconify-icon icon="mdi:close" width="16px" height="16px"></iconify-icon>
-				{:else}
-					<iconify-icon icon="mdi:unfold-more-horizontal" width="16px" height="16px"></iconify-icon>
-				{/if}
-			</button>
-		</svelte:fragment>
-	</TextInput>
+	/>
 
 	<div
 		bind:this={floatingElement}
@@ -167,14 +142,7 @@
 		)}
 	>
 		<div class="w-full overflow-y-auto" style:max-height="220px">
-			<Options
-				options={filteredOptions}
-				{disabled}
-				on:select={handleSelect}
-				value={selectedOption}
-				{withCheckIcon}
-				{checkIconPosition}
-			/>
+			<Options options={filteredOptions} {disabled} on:select={handleSelect} />
 		</div>
 	</div>
 </div>
