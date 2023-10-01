@@ -28,6 +28,9 @@ export default {
 			},
 			danger: {
 				DEFAULT: '#F05454'
+			},
+			disabled: {
+				DEFAULT: '#DDDDDD'
 			}
 		},
 		extend: {
