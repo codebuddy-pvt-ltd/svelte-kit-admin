@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Chip from '$lib/components/Form/Chip.svelte';
+	import Switch from '$lib/components/Form/Switch.svelte';
 	import TabSelect from '$lib/components/Form/TabSelect.svelte';
 	import TextInput from '$lib/components/Form/TextInput.svelte';
 
@@ -27,5 +28,7 @@
 		<Chip>Test</Chip>
 
 		<TabSelect {options} bind:group={radioValue} />
+
+		<Switch>Test</Switch>
 	</form>
 </section>

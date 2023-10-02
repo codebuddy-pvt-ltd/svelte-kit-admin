@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
-import Checkbox from './Checkbox.svelte';
+import Switch from './Switch.svelte';
 
 const meta = {
-	title: 'Components/Checkbox',
-	component: Checkbox,
+	title: 'Components/Switch',
+	component: Switch,
 	tags: ['autodocs'],
 	argTypes: {
 		disabled: {
@@ -13,27 +13,31 @@ const meta = {
 		},
 		description: {
 			control: 'text',
-			defaultValue: 'Description'
+			defaultValue: 'Description',
+			description: 'Description of the switch'
 		},
 		error: {
 			control: 'text',
-			defaultValue: 'Checkbox'
+			description: 'Error message to display'
 		},
 		labelPosition: {
 			control: 'inline-radio',
 			options: ['left', 'right'],
-			defaultValue: 'right'
+			defaultValue: 'right',
+			description: 'Position of the label'
 		}
 	}
-} satisfies Meta<Checkbox>;
+} satisfies Meta<Switch>;
 
 export default meta;
 
-type Story = StoryObj<Checkbox>;
+type Story = StoryObj<Switch>;
 
 export const Default: Story = {
 	args: {
-		description: 'This is a checkbox',
-		labelPosition: 'right'
+		description: 'This is a switch',
+		labelPosition: 'right',
+		error: '',
+		disabled: false
 	}
 };

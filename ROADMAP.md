@@ -40,8 +40,8 @@
 |   PIN Input    |   ❌   |
 |     Radio      |   ✅   |
 |     Rating     |   ❌   |
-|   Tab Select   |   ❌   |
-|     Slider     |   ❌   |
+|   Tab Select   |   ✅   |
+|     Range      |   ❌   |
 |     Switch     |   ❌   |
 |    Textarea    |   ❌   |
 |   TextInput    |   ✅   |
