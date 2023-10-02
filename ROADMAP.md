@@ -51,8 +51,8 @@
 
 |  Component  | Status |
 | :---------: | :----: |
-|   Anchor    |   ❌   |
-| Breadcrumbs |   ❌   |
+|   Anchor    |   ✅   |
+| Breadcrumbs |   ✅   |
 |   Burger    |   ❌   |
 |   NavLink   |   ❌   |
 | Pagination  |   ❌   |

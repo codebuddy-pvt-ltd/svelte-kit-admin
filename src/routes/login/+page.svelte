@@ -4,6 +4,7 @@
 	import TabSelect from '$lib/components/Form/TabSelect.svelte';
 	import TextInput from '$lib/components/Form/TextInput.svelte';
 	import Anchor from '$lib/components/navigation/Anchor.svelte';
+	import Breadcrumbs from '$lib/components/navigation/Breadcrumbs.svelte';
 
 	let radioValue: string | undefined = 'left';
 
@@ -33,5 +34,13 @@
 		<Switch>Test</Switch>
 
 		<Anchor color="accent" underline="hover">Link</Anchor>
+
+		<Breadcrumbs
+			items={[
+				{ title: 'Level 1', href: '#' },
+				{ title: 'Level 2', href: '#' },
+				{ title: 'Level 3', href: '#' }
+			]}
+		/>
 	</form>
 </section>
