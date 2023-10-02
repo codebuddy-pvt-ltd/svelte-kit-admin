@@ -45,6 +45,7 @@
 |     Switch     |   ✅   |
 |    Textarea    |   ✅   |
 |   TextInput    |   ✅   |
+|    TagInput    |   ❌   |
 
 ### Navigation Components
 

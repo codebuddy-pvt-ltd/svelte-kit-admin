@@ -3,6 +3,7 @@
 	import Switch from '$lib/components/Form/Switch.svelte';
 	import TabSelect from '$lib/components/Form/TabSelect.svelte';
 	import TextInput from '$lib/components/Form/TextInput.svelte';
+	import Anchor from '$lib/components/navigation/Anchor.svelte';
 
 	let radioValue: string | undefined = 'left';
 
@@ -30,5 +31,7 @@
 		<TabSelect {options} bind:group={radioValue} />
 
 		<Switch>Test</Switch>
+
+		<Anchor color="accent" underline="hover">Link</Anchor>
 	</form>
 </section>
