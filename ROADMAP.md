@@ -42,8 +42,8 @@
 |     Rating     |   ❌   |
 |   Tab Select   |   ✅   |
 |     Range      |   ❌   |
-|     Switch     |   ❌   |
-|    Textarea    |   ❌   |
+|     Switch     |   ✅   |
+|    Textarea    |   ✅   |
 |   TextInput    |   ✅   |
 
 ### Navigation Components
