@@ -1,9 +1,20 @@
 <script lang="ts">
 	import Chip from '$lib/components/Form/Chip.svelte';
-	import Radio from '$lib/components/Form/Radio.svelte';
+	import TabSelect from '$lib/components/Form/TabSelect.svelte';
 	import TextInput from '$lib/components/Form/TextInput.svelte';
 
-	let radioValue: string | undefined = undefined;
+	let radioValue: string | undefined = 'left';
+
+	let options = [
+		{ label: 'Left', value: 'left' },
+		{ label: 'Right', value: 'right', disabled: true },
+		{ label: 'Top', value: 'top' },
+		{
+			label: 'Bottom',
+			value: 'bottom',
+			icon: 'mdi:arrow-bottom-left'
+		}
+	];
 </script>
 
 <section class="flex flex-1 flex-col items-center justify-center self-center">
@@ -15,14 +26,6 @@
 
 		<Chip>Test</Chip>
 
-		<Radio
-			options={[
-				{ label: 'Left', value: 'left', description: 'lorem' },
-				{ label: 'Right', value: 'right', description: 'lorem' }
-			]}
-			bind:group={radioValue}
-		>
-			Radio
-		</Radio>
+		<TabSelect {options} bind:group={radioValue} />
 	</form>
 </section>
