@@ -5,6 +5,7 @@
 	import TextInput from '$lib/components/Form/TextInput.svelte';
 	import Anchor from '$lib/components/navigation/Anchor.svelte';
 	import Breadcrumbs from '$lib/components/navigation/Breadcrumbs.svelte';
+	import NavLink from '$lib/components/navigation/NavLink.svelte';
 
 	let radioValue: string | undefined = 'left';
 
@@ -42,5 +43,7 @@
 				{ title: 'Level 3', href: '#' }
 			]}
 		/>
+
+		<NavLink>Nav Link</NavLink>
 	</form>
 </section>

@@ -54,7 +54,7 @@
 |   Anchor    |   ✅   |
 | Breadcrumbs |   ✅   |
 |   Burger    |   ❌   |
-|   NavLink   |   ❌   |
+|   NavLink   |   ✅   |
 | Pagination  |   ❌   |
 |   Stepper   |   ❌   |
 |    Tabs     |   ❌   |
