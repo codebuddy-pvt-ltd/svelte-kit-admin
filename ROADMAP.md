@@ -8,8 +8,8 @@
 
 |  Component   | Status |
 | :----------: | :----: |
-|  App Shell   |   ❌   |
-| Aspect Ratio |   ❌   |
+|  App Shell   |   ✅   |
+| Aspect Ratio |   ✅   |
 |    Center    |   ❌   |
 |  Container   |   ❌   |
 |    Group     |   ❌   |

@@ -4,6 +4,7 @@
 	import Header from '$lib/components/navigation/AppShell/Header.svelte';
 	import Aside from '$lib/components/navigation/AppShell/Aside.svelte';
 	import NavLink from '$lib/components/navigation/NavLink.svelte';
+	import AspectRatio from '$lib/components/layouts/AspectRatio.svelte';
 </script>
 
 <AppShell
@@ -26,6 +27,14 @@
 	<Aside slot="aside" class="border-l border-l-dark/50 bg-primary/30">Aside</Aside>
 
 	<svelte:fragment>
+		<AspectRatio ratio={9 / 16}>
+			<img
+				src="https://picsum.photos/seed/picsum/800/800"
+				alt="picsum"
+				class="h-full w-full object-cover"
+			/>
+		</AspectRatio>
+
 		{#each Array(20) as _}
 			<div class="m-7 h-16 bg-light"></div>
 		{/each}
