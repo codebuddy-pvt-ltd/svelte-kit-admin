@@ -10,7 +10,7 @@
 | :----------: | :----: |
 |  App Shell   |   ✅   |
 | Aspect Ratio |   ✅   |
-|    Center    |   ❌   |
+|    Center    |   ✅   |
 |  Container   |   ❌   |
 |    Group     |   ❌   |
 |   Divider    |   ❌   |
