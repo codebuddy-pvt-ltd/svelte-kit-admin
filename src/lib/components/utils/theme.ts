@@ -47,3 +47,24 @@ export const Rounded: Record<Radius, string> = {
 	'3xl': 'rounded-3xl',
 	full: 'rounded-full'
 };
+
+export const FlexItemsAlignments = {
+	START: 'start',
+	CENTER: 'center',
+	END: 'end',
+	BASELINE: 'baseline',
+	STRETCH: 'stretch'
+} as const;
+
+export type FlexItemsAlignment = OBjectValues<typeof FlexItemsAlignments>;
+
+export const FlexJustifyContents = {
+	START: 'start',
+	CENTER: 'center',
+	END: 'end',
+	BETWEEN: 'between',
+	AROUND: 'around',
+	EVENLY: 'evenly'
+} as const;
+
+export type FlexJustifyContent = OBjectValues<typeof FlexJustifyContents>;

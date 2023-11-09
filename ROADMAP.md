@@ -12,7 +12,7 @@
 | Aspect Ratio |   ✅   |
 |    Center    |   ✅   |
 |  Container   |   ✅   |
-|    Group     |   ❌   |
+|    Group     |   ✅   |
 |   Divider    |   ❌   |
 
 ### Button Components
