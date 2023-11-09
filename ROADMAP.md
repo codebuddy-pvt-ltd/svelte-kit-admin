@@ -13,7 +13,7 @@
 |    Center    |   ✅   |
 |  Container   |   ✅   |
 |    Group     |   ✅   |
-|   Divider    |   ❌   |
+|   Divider    |   ✅   |
 
 ### Button Components
 
