@@ -17,10 +17,9 @@
 
 ### Button Components
 
-|   Component   | Status |
-| :-----------: | :----: |
-| Action Button |   ❌   |
-|    Button     |   ✅   |
+| Component | Status |
+| :-------: | :----: |
+|  Button   |   ✅   |
 
 ### Form Components
 
@@ -29,7 +28,7 @@
 |  Autocomplete  |   ✅   |
 |    Checkbox    |   ✅   |
 |      Chip      |   ✅   |
-|  Color Input   |   ❌   |
+|  Color Input   |   ✅   |
 |   File Input   |   ❌   |
 |     Input      |   ✅   |
 |     Select     |   ✅   |

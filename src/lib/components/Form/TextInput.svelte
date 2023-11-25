@@ -24,7 +24,7 @@
 	export let containerRef: $$Props['containerRef'] = undefined;
 </script>
 
-<div class="w-full" bind:this={containerRef}>
+<div class="w-full rounded-lg border" bind:this={containerRef}>
 	{#if label || $$slots.label}
 		<label for={id} class={cn('block', error ? 'text-danger' : '')}>
 			{#if $$slots.label}

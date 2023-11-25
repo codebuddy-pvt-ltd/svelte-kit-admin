@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ColorInput from '$lib/components/Form/ColorInput/ColorInput.svelte';
 	import Divider from '$lib/components/layouts/Divider.svelte';
 	import Group from '$lib/components/layouts/Group.svelte';
 </script>
@@ -14,4 +15,6 @@
 	<Divider thickness={8} />
 
 	<Divider>Hello World</Divider>
+
+	<ColorInput />
 </div>
