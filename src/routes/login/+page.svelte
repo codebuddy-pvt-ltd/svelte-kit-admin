@@ -1,8 +1,45 @@
 <script lang="ts">
-	import ColorInput from '$lib/components/Form/ColorInput/ColorInput.svelte';
-	import FileInput from '$lib/components/Form/FileInput.svelte';
+	import MultiSelect from '$lib/components/Form/MultiSelect.svelte';
+	import type { GroupedOption } from '$lib/components/Form/options/types';
 	import Divider from '$lib/components/layouts/Divider.svelte';
 	import Group from '$lib/components/layouts/Group.svelte';
+
+	const options: Array<GroupedOption> = [
+		{
+			group: 'Group 1',
+			items: [
+				{
+					label: 'Option 1',
+					value: 'option-1'
+				},
+				{
+					label: 'Option 2',
+					value: 'option-2'
+				},
+				{
+					label: 'Option 3',
+					value: 'option-3'
+				}
+			]
+		},
+		{
+			group: 'Group 2',
+			items: [
+				{
+					label: 'Option 4',
+					value: 'option-4'
+				},
+				{
+					label: 'Option 5',
+					value: 'option-5'
+				},
+				{
+					label: 'Option 6',
+					value: 'option-6'
+				}
+			]
+		}
+	];
 </script>
 
 <div class="text-white">
@@ -17,7 +54,5 @@
 
 	<Divider>Hello World</Divider>
 
-	<ColorInput />
-
-	<FileInput multiple={true} clearable />
+	<MultiSelect {options} searchable={true} />
 </div>

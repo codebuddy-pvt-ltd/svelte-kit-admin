@@ -2,7 +2,7 @@
 	import type { TextInputProps } from './TextInput.svelte';
 	import type { Option, OptionItem, OptionValue } from './options/types';
 
-	export interface AutocompleteProps extends TextInputProps {
+	export interface SelectProps extends TextInputProps {
 		value?: OptionValue;
 		options: Array<OptionItem>;
 		clearable?: boolean;
@@ -22,7 +22,7 @@
 	import { parseOptions, searchFilterOptions } from './options/utils';
 	import Options from './options/Options.svelte';
 
-	type $$Props = AutocompleteProps;
+	type $$Props = SelectProps;
 
 	export let options: $$Props['options'] = [];
 	export let value: $$Props['value'] = undefined;
@@ -35,9 +35,9 @@
 	let referenceElement: ReferenceElement;
 	let inputElement: HTMLInputElement;
 	let floatingElement: FloatingElement;
+	let showFloatingElement = false;
 
 	let selectedOption: Option | undefined = undefined;
-	let showFloatingElement = false;
 	let search = '';
 
 	$: parsedOptions = parseOptions(options);

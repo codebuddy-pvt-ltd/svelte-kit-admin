@@ -32,7 +32,7 @@
 |   File Input   |   ✅   |
 |     Input      |   ✅   |
 |     Select     |   ✅   |
-|  Multi Select  |   ❌   |
+|  Multi Select  |   ✅   |
 | Native Select  |   ❌   |
 |  Number Input  |   ✅   |
 | Password Input |   ✅   |

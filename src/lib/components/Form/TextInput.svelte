@@ -64,6 +64,7 @@
 			{/if}
 		</svelte:fragment>
 	</Input>
+
 	{#if error}
 		<p transition:fade class="text-medium text-sm text-danger">{error}</p>
 	{/if}
