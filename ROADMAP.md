@@ -29,7 +29,7 @@
 |    Checkbox    |   ✅   |
 |      Chip      |   ✅   |
 |  Color Input   |   ✅   |
-|   File Input   |   ❌   |
+|   File Input   |   ✅   |
 |     Input      |   ✅   |
 |     Select     |   ✅   |
 |  Multi Select  |   ❌   |

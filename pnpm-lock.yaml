@@ -125,7 +125,7 @@ devDependencies:
     specifier: ^0.6.13
     version: 0.6.13(eslint@8.48.0)(typescript@5.2.2)
   eslint-plugin-svelte:
-    specifier: ^2.30.0
+    specifier: ^2.33.0
     version: 2.33.0(eslint@8.48.0)(svelte@4.2.0)(ts-node@10.9.1)
   husky:
     specifier: ^8.0.0
