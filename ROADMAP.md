@@ -33,7 +33,7 @@
 |     Input      |   ✅   |
 |     Select     |   ✅   |
 |  Multi Select  |   ✅   |
-| Native Select  |   ❌   |
+| Native Select  |   ✅   |
 |  Number Input  |   ✅   |
 | Password Input |   ✅   |
 |   PIN Input    |   ❌   |

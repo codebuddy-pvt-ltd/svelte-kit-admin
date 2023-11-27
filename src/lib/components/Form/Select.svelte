@@ -19,7 +19,7 @@
 	import type { ReferenceElement, FloatingElement } from '@floating-ui/core';
 	import { autoUpdate, computePosition, flip, offset, size } from '@floating-ui/dom';
 	import { cn } from '../utils';
-	import { parseOptions, searchFilterOptions } from './options/utils';
+	import { getParsedOptions, getFilteredOptions } from './options/utils';
 	import Options from './options/Options.svelte';
 
 	type $$Props = SelectProps;
@@ -40,8 +40,8 @@
 	let selectedOption: Option | undefined = undefined;
 	let search = '';
 
-	$: parsedOptions = parseOptions(options);
-	$: filteredOptions = searchable ? searchFilterOptions(parsedOptions, search) : parsedOptions;
+	$: parsedOptions = getParsedOptions(options);
+	$: filteredOptions = searchable ? getFilteredOptions(parsedOptions, search) : parsedOptions;
 
 	async function updatePosition() {
 		const { x, y } = await computePosition(referenceElement, floatingElement, {

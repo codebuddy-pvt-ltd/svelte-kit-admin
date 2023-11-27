@@ -1,10 +1,11 @@
 <script lang="ts">
 	import MultiSelect from '$lib/components/Form/MultiSelect.svelte';
-	import type { GroupedOption } from '$lib/components/Form/options/types';
+	import NativeSelect from '$lib/components/Form/NativeSelect/NativeSelect.svelte';
+	import type { OptionItem } from '$lib/components/Form/options/types';
 	import Divider from '$lib/components/layouts/Divider.svelte';
 	import Group from '$lib/components/layouts/Group.svelte';
 
-	const options: Array<GroupedOption> = [
+	const options: Array<OptionItem> = [
 		{
 			group: 'Group 1',
 			items: [
@@ -38,7 +39,10 @@
 					value: 'option-6'
 				}
 			]
-		}
+		},
+		'Option-7',
+		{ value: 'Option-8', label: 'Option-8' },
+		123
 	];
 </script>
 
@@ -55,4 +59,6 @@
 	<Divider>Hello World</Divider>
 
 	<MultiSelect {options} searchable={true} />
+
+	<NativeSelect label="Label" description="Description" {options} />
 </div>

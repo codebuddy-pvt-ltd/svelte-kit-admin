@@ -16,7 +16,7 @@
 	import { autoUpdate, computePosition, offset, size, flip } from '@floating-ui/dom';
 	import { cn } from '../utils';
 	import Options from './options/Options.svelte';
-	import { isOptionValue, parseOptions, searchFilterOptions } from './options/utils';
+	import { isOptionValue, getParsedOptions, getFilteredOptions } from './options/utils';
 
 	type $$Props = AutocompleteProps;
 
@@ -31,9 +31,9 @@
 	let showFloatingElement = false;
 	let search = '';
 
-	$: parsedOptions = parseOptions(options);
+	$: parsedOptions = getParsedOptions(options);
 
-	$: filteredOptions = searchFilterOptions(parsedOptions, search);
+	$: filteredOptions = getFilteredOptions(parsedOptions, search);
 
 	async function updatePosition() {
 		const { x, y } = await computePosition(referenceElement, floatingElement, {

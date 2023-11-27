@@ -49,6 +49,7 @@
 			<slot name="left" />
 		</div>
 	{/if}
+
 	<input
 		{...$$restProps}
 		class={cn('block w-full rounded-lg bg-transparent px-1 py-1', $$props.class, {
@@ -67,6 +68,7 @@
 		on:click
 		on:input
 	/>
+
 	{#if $$slots.right}
 		<div
 			class={cn(

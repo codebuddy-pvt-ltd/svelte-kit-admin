@@ -19,7 +19,7 @@ export function isOptionValue(item: OptionItem): item is OptionValue {
 	return typeof item === 'string' || typeof item === 'number';
 }
 
-export function parseOptions(items: Array<OptionItem>) {
+export function getParsedOptions(items: Array<OptionItem>) {
 	const result: Array<OptionParsedItem> = items.map((item) => {
 		if (isOptionValue(item)) {
 			return {
@@ -34,14 +34,14 @@ export function parseOptions(items: Array<OptionItem>) {
 
 		return {
 			group: item.group,
-			items: parseOptions(item.items) as Array<Option>
+			items: getParsedOptions(item.items) as Array<Option>
 		} satisfies GroupedParsedOption;
 	});
 
 	return result;
 }
 
-export function searchFilterOptions(options: Array<OptionParsedItem>, search: string | undefined) {
+export function getFilteredOptions(options: Array<OptionParsedItem>, search: string | undefined) {
 	if (search === undefined || search === '') {
 		return options;
 	}
@@ -50,7 +50,7 @@ export function searchFilterOptions(options: Array<OptionParsedItem>, search: st
 
 	options.forEach((item) => {
 		if (isOptionGroup(item)) {
-			const filteredItems = searchFilterOptions(item.items, search);
+			const filteredItems = getFilteredOptions(item.items, search);
 
 			if (filteredItems.length > 0) {
 				result.push({
