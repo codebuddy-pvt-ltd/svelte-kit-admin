@@ -36,7 +36,7 @@
 | Native Select  |   ✅   |
 |  Number Input  |   ✅   |
 | Password Input |   ✅   |
-|   PIN Input    |   ❌   |
+|   PIN Input    |   ✅   |
 |     Radio      |   ✅   |
 |     Rating     |   ❌   |
 |   Tab Select   |   ✅   |
