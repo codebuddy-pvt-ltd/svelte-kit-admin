@@ -46,54 +46,52 @@
 </script>
 
 <ul bind:this={ref} class="text-dark">
-	{#if options.length === 0}
-		<li class="text-medium text-center text-primary opacity-30">No options</li>
-	{:else}
-		{#each options as option}
-			{#if isOption(option)}
-				{@const item = option}
-				{@const isSelected = isOptionSelected(item)}
-				<li class="">
-					<button
-						type="button"
-						{disabled}
-						on:click|preventDefault|stopPropagation={() => handleSelect(item)}
-						on:keydown={(e) => {
-							if (e.key === 'Enter') {
-								handleSelect(item);
-							}
-						}}
-						class={cn('flex w-full cursor-pointer items-center rounded-lg px-2 py-1 text-left ', {
-							'font-semibold': isSelected
-						})}
-					>
-						{#if withCheckIcon && checkIconPosition === 'left' && isSelected}
-							<iconify-icon icon="mdi:check" width="16px" height="16px" class="mr-2"></iconify-icon>
-						{/if}
-						<span class="flex-1">{item.label}</span>
-						{#if withCheckIcon && checkIconPosition === 'right' && isSelected}
-							<iconify-icon icon="mdi:check" width="16px" height="16px" class="mr-2"></iconify-icon>
-						{/if}
-					</button>
-				</li>
-			{:else}
-				{@const { group, items } = option}
-				<div class="w-full">
-					<div class="flex items-center">
-						<h3 class="text-sm text-primary opacity-50">{group}</h3>
-						<hr class="ml-3 flex-1 border border-primary border-opacity-50" />
-					</div>
-
-					<svelte:self
-						options={items}
-						on:select
-						{value}
-						{withCheckIcon}
-						{checkIconPosition}
-						{disabled}
-					/>
+	{#each options as option}
+		{#if isOption(option)}
+			{@const item = option}
+			{@const isSelected = isOptionSelected(item)}
+			<li class="">
+				<button
+					type="button"
+					{disabled}
+					on:click|preventDefault|stopPropagation={() => handleSelect(item)}
+					on:keydown={(e) => {
+						if (e.key === 'Enter') {
+							handleSelect(item);
+						}
+					}}
+					class={cn('flex w-full cursor-pointer items-center rounded-lg px-2 py-1 text-left ', {
+						'font-semibold': isSelected
+					})}
+				>
+					{#if withCheckIcon && checkIconPosition === 'left' && isSelected}
+						<iconify-icon icon="mdi:check" width="16px" height="16px" class="mr-2"></iconify-icon>
+					{/if}
+					<span class="flex-1">{item.label}</span>
+					{#if withCheckIcon && checkIconPosition === 'right' && isSelected}
+						<iconify-icon icon="mdi:check" width="16px" height="16px" class="mr-2"></iconify-icon>
+					{/if}
+				</button>
+			</li>
+		{:else}
+			{@const { group, items } = option}
+			<div class="w-full">
+				<div class="flex items-center">
+					<h3 class="text-sm text-primary opacity-50">{group}</h3>
+					<hr class="ml-3 flex-1 border border-primary border-opacity-50" />
 				</div>
-			{/if}
-		{/each}
-	{/if}
+
+				<svelte:self
+					options={items}
+					on:select
+					{value}
+					{withCheckIcon}
+					{checkIconPosition}
+					{disabled}
+				/>
+			</div>
+		{/if}
+	{:else}
+		<li class="text-medium text-center text-primary opacity-30">No options</li>
+	{/each}
 </ul>

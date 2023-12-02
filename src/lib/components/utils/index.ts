@@ -19,3 +19,9 @@ export function clamp(value: number, min: number | undefined, max: number | unde
 	// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 	return Math.min(Math.max(value, min!), max!);
 }
+
+export const roundValueTo = (value: number, to: number) => {
+	const rounded = Math.round(value / to) * to;
+	const precision = `${to}`.split('.')[1]?.length || 0;
+	return Number(rounded.toFixed(precision));
+};

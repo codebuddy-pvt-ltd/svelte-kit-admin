@@ -2,6 +2,7 @@
 	import MultiSelect from '$lib/components/Form/MultiSelect.svelte';
 	import NativeSelect from '$lib/components/Form/NativeSelect/NativeSelect.svelte';
 	import PinInput from '$lib/components/Form/PinInput.svelte';
+	import Rating from '$lib/components/Form/Rating/Rating.svelte';
 	import type { OptionItem } from '$lib/components/Form/options/types';
 	import Divider from '$lib/components/layouts/Divider.svelte';
 	import Group from '$lib/components/layouts/Group.svelte';
@@ -64,4 +65,6 @@
 	<NativeSelect label="Label" description="Description" {options} />
 
 	<PinInput />
+
+	<Rating />
 </div>
