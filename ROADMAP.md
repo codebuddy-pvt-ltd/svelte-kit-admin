@@ -40,7 +40,7 @@
 |     Radio      |   ✅   |
 |     Rating     |   ✅   |
 |   Tab Select   |   ✅   |
-|     Range      |   ❌   |
+|     Slider     |   ✅   |
 |     Switch     |   ✅   |
 |    Textarea    |   ✅   |
 |   TextInput    |   ✅   |

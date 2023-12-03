@@ -34,7 +34,7 @@
 	let rootElement: HTMLElement;
 
 	function getRatingFromCoordinates(x: number) {
-		const { left, right, width } = rootElement!.getBoundingClientRect();
+		const { left, width } = rootElement.getBoundingClientRect();
 		const symbolWidth = width / _count;
 
 		const hoverPosition = x - left;
