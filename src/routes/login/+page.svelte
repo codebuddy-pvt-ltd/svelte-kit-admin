@@ -1,7 +1,9 @@
 <script lang="ts">
-	import Slider from '$lib/components/Form/Slider/Slider.svelte';
+	import TagInput from '$lib/components/Form/TagInput/TagInput.svelte';
+
+	const options = Array.from({ length: 100 }, (_, i) => `Option ${i + 1}`);
 </script>
 
 <div class="p-7 text-white">
-	<Slider />
+	<TagInput {options} searchable clearable limit={3} allowDuplicates />
 </div>
